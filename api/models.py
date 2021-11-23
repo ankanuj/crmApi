@@ -9,6 +9,8 @@ class enquiryForm(models.Model):
   state = models.CharField(max_length=100, blank=False)
   zipcode = models.IntegerField(blank=False)
   dateCreated = models.DateTimeField(auto_now=False, auto_now_add=True)
+  claimed_by = models.CharField(max_length=50, default=None)
+  claimed = models.BooleanField(default=False)
 
   def __str__(self):
     return self.fullName
